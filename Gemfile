@@ -46,6 +46,7 @@ gem 'rails-i18n', '~> 5.1'
 
 # Pry is a runtime developer console and IRB alternative with powerful introspection capabilities.
 gem 'pry', '~> 0.13.1'
-
+# ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
+gem 'active_model_serializers', '~> 0.10.2'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

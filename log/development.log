@@ -34075,3 +34075,55 @@ Processing by ContactsController#index as */*
 Completed 200 OK in 35ms (Views: 30.9ms | ActiveRecord: 3.3ms)
 
 
+Started GET "/contacts" for ::1 at 2021-01-17 22:15:31 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Library/Ruby/Gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by ContactsController#index as */*
+  Parameters: {"contact"=>{"id"=>106, "name"=>"test 2", "email"=>"barbarstoltenberg@goldner.name", "birthdate"=>"2020-10-31", "kind_id"=>1, "phones_attributes"=>[{"id"=>201, "_destroy"=>true}, {"id"=>202, "number"=>"4343"}]}}
+  [1m[36mContact Load (2.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (46.94ms)
+Completed 200 OK in 83ms (Views: 79.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/contacts" for ::1 at 2021-01-17 22:19:34 -0300
+Processing by ContactsController#index as */*
+  Parameters: {"contact"=>{"id"=>106, "name"=>"test 2", "email"=>"barbarstoltenberg@goldner.name", "birthdate"=>"2020-10-31", "kind_id"=>1, "phones_attributes"=>[{"id"=>201, "_destroy"=>true}, {"id"=>202, "number"=>"4343"}]}}
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/Users/danielkhaleb/projects/notebook_api/app/serializers/contact_serializer.rb:6: syntax error, unexpected '=', expecting end
+    h(:birthdate) = object.birthdate.to_time.iso...
+                  ^
+/Users/danielkhaleb/projects/notebook_api/app/serializers/contact_serializer.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+app/serializers/contact_serializer.rb:6: syntax error, unexpected '=', expecting end
+app/serializers/contact_serializer.rb:8: syntax error, unexpected end-of-input, expecting end
+app/controllers/contacts_controller.rb:8:in `index'
+Started GET "/contacts" for ::1 at 2021-01-17 22:21:06 -0300
+Processing by ContactsController#index as */*
+  Parameters: {"contact"=>{"id"=>106, "name"=>"test 2", "email"=>"barbarstoltenberg@goldner.name", "birthdate"=>"2020-10-31", "kind_id"=>1, "phones_attributes"=>[{"id"=>201, "_destroy"=>true}, {"id"=>202, "number"=>"4343"}]}}
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.4ms)
+
+
+  
+SyntaxError (/Users/danielkhaleb/projects/notebook_api/app/serializers/contact_serializer.rb:6: syntax error, unexpected '=', expecting end
+    h(:birthdate) = object.birthdate.to_time.iso...
+                  ^):
+  
+app/serializers/contact_serializer.rb:6: syntax error, unexpected '=', expecting end
+app/controllers/contacts_controller.rb:8:in `index'
+Started GET "/contacts" for ::1 at 2021-01-17 22:21:40 -0300
+Processing by ContactsController#index as */*
+  Parameters: {"contact"=>{"id"=>106, "name"=>"test 2", "email"=>"barbarstoltenberg@goldner.name", "birthdate"=>"2020-10-31", "kind_id"=>1, "phones_attributes"=>[{"id"=>201, "_destroy"=>true}, {"id"=>202, "number"=>"4343"}]}}
+  [1m[36mContact Load (3.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  ↳ app/controllers/contacts_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::JsonApi (28.57ms)
+Completed 200 OK in 100ms (Views: 95.4ms | ActiveRecord: 3.8ms)
+
+
